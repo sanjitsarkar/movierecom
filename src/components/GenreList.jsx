@@ -1,19 +1,22 @@
 import React from 'react'
 
-const GenreList = ({getMovieInfo}) => {
+const GenreList = ({fetchMovies}) => {
     return (
         <div className="genre_list">
-        <button onClick={()=>getMovieInfo("action")}>
-            Action
+        <button onClick={(e)=>fetchMovies(e,"878")}>
+            Sci-Fi
         </button> 
-        <button onClick={()=>getMovieInfo("adventure")}>
-            Adventure
+        <button onClick={(e)=>fetchMovies(e,"27")}>
+            Horror
         </button> 
-        <button onClick={()=>getMovieInfo("comedy")}>
+        <button onClick={(e)=>fetchMovies(e,"53")}>
+            Thriller
+        </button> 
+        <button onClick={(e)=>fetchMovies(e,"35")}>
             Comedy
         </button> 
-        <button onClick={()=>getMovieInfo("sci-fi")}>
-            Sci-Fi
+        <button onClick={(e)=>fetchMovies(e,"16")}>
+            Animation
         </button> 
         </div>
     )

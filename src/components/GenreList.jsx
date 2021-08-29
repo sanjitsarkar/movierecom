@@ -1,21 +1,38 @@
-import React from 'react'
+import React, { useRef,useState } from 'react'
 
 const GenreList = ({fetchMovies}) => {
+    const activeRef = useRef(undefined)
+    const [active, setActive] = useState(false)
+    const toggleClass = (e) =>{
+        console.log("Hello")
+        setActive(()=>false)
+        e.currentTarget.classList.add('active')
+    }
     return (
         <div className="genre_list">
-        <button onClick={(e)=>fetchMovies(e,"878")}>
+        <button ref = {activeRef} 
+        className = {active?"active":null}
+         onClick={(e)=>{toggleClass(e);fetchMovies("878");}}>
             Sci-Fi
         </button> 
-        <button onClick={(e)=>fetchMovies(e,"27")}>
+        <button 
+        className = {active?"active":null}
+        onClick={(e)=>{toggleClass(e);fetchMovies("27");}}>
             Horror
         </button> 
-        <button onClick={(e)=>fetchMovies(e,"53")}>
+        <button 
+        className = {active?"active":null}
+        onClick={(e)=>{toggleClass(e);fetchMovies("53");}}>
             Thriller
         </button> 
-        <button onClick={(e)=>fetchMovies(e,"35")}>
+        <button 
+        className = {active?"active":null}
+        onClick={(e)=>{toggleClass(e);fetchMovies("35");}}>
             Comedy
         </button> 
-        <button onClick={(e)=>fetchMovies(e,"16")}>
+        <button 
+        className = {active?"active":null}
+        onClick={(e)=>{toggleClass(e);fetchMovies("16");}}>
             Animation
         </button> 
         </div>

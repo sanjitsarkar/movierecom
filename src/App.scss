@@ -104,13 +104,15 @@ a{
     gap: 1rem;
     }
     &>*{
-      flex:0 0 19%;
+      flex:0 0 15%;
 
       // flex: 1 0 auto;
-    @media screen and (max-width:400px) {
-      flex:0 0 45%;
+    @media screen and (max-width:500px) {
+      flex:0 0 93%;
 
     }
+   
+     
     }
     .movie_card
     {
@@ -132,7 +134,7 @@ a{
       .content{
   
         // flex:1 1 30%;
-        //  height: 20%;
+        //  height: 30%;
         padding: 1.1rem;
 .title{
   margin:0;

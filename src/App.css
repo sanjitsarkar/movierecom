@@ -127,15 +127,15 @@ body {
 
 .App .movie_list > * {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 19%;
-          flex: 0 0 19%;
+      -ms-flex: 0 0 15%;
+          flex: 0 0 15%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .App .movie_list > * {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 45%;
-            flex: 0 0 45%;
+        -ms-flex: 0 0 93%;
+            flex: 0 0 93%;
   }
 }
 

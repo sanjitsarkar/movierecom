@@ -224,7 +224,7 @@ p{
     // top:20%;
   }
   @media screen and (max-width:800px) {
-    height: auto;
+    height: fit-content;
   gap:5vh;
     flex-direction: column;
   img.poster{

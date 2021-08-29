@@ -229,7 +229,9 @@ body {
 
 @media screen and (max-width: 800px) {
   .movie_info {
-    height: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     gap: 5vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

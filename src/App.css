@@ -16,6 +16,27 @@ body {
   }
 }
 
+.row {
+  margin-top: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5%;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .App h1 {
   text-align: center;
   margin-top: 2rem;
@@ -41,6 +62,11 @@ body {
     margin: 0 3%;
     margin-top: 1rem;
   }
+}
+
+.App .genre_list a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .App .genre_list button {
@@ -101,8 +127,8 @@ body {
 
 .App .movie_list > * {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 14%;
-          flex: 0 0 14%;
+      -ms-flex: 0 0 19%;
+          flex: 0 0 19%;
 }
 
 @media screen and (max-width: 400px) {
@@ -114,7 +140,8 @@ body {
 }
 
 .App .movie_list .movie_card {
-  width: 40%;
+  text-decoration: none;
+  cursor: pointer;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,7 +160,6 @@ body {
 }
 
 .App .movie_list .movie_card .content {
-  height: 20%;
   padding: 1.1rem;
 }
 
@@ -149,5 +175,84 @@ body {
   font-weight: bold;
   font-size: 1rem;
   color: rgba(35, 83, 81, 0.746);
+}
+
+.movie_info {
+  height: 100vh;
+  padding: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: -1;
+  background: #0c0a0f;
+}
+
+.movie_info img.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  -webkit-filter: opacity(0.5) blur(10px);
+          filter: opacity(0.5) blur(10px);
+}
+
+.movie_info img.poster {
+  z-index: 99;
+  height: 70vh;
+}
+
+.movie_info .content .title {
+  color: white;
+}
+
+.movie_info .content .desc {
+  color: rgba(255, 255, 255, 0.815);
+}
+
+.movie_info .content span {
+  color: rgba(255, 255, 255, 0.739);
+}
+
+.movie_info .content .popularity, .movie_info .content .release_date, .movie_info .content .vote_count, .movie_info .content .rating {
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .movie_info {
+    height: auto;
+    gap: 5vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .movie_info img.poster {
+    height: 50vh;
+  }
+  .movie_info .row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .movie_info .title {
+    text-align: center;
+    margin-bottom: 1vh;
+  }
+  .movie_info .desc {
+    text-align: justify;
+  }
+  .movie_info .rating {
+    color: white;
+  }
 }
 /*# sourceMappingURL=App.css.map */

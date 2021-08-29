@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import GenreList from './components/GenreList'
 import { MovieList } from './components/MovieList'
-
+import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import MovieInfo from './components/MovieInfo'
 function App() {
   const [genre, setGenre] = useState("878")
   const [movies, setMovies] = useState([])
@@ -25,7 +26,7 @@ else{
 }
 
 result = await result.json()
-// console.log(genre,result.results)
+console.log(genre,result.results)
 setLoading(false)
 setMovies(await result.results)
 
@@ -37,11 +38,22 @@ useEffect(() => {
 }, [])
 // console.log(movies)
   return (
-    <div className="App">
+    <BrowserRouter>
+   
+    <Switch>
+      <Route path="/" exact>
+      <div className="App">
      <h1>Recommended Movies</h1>
      <GenreList fetchMovies = {fetchMovies}/>
      <MovieList movies = {movies} loading = {loading}/>
     </div>
+      </Route>
+      <Route path="/:id">
+        
+       <MovieInfo movies={movies} />
+      </Route>
+    </Switch>
+    </BrowserRouter>
   )
 }
 

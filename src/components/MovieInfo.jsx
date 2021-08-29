@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import React from 'react'
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 const MovieInfo = ({movies}) => {
     const {id} = useParams()
     const [movie, setMovie] = useState("")
@@ -10,7 +10,8 @@ const MovieInfo = ({movies}) => {
     return (
         <div className="movie_info">
           <img className="backdrop" src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={movie.id} />
-          <img className="poster" src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.id} />
+         <div className="group"><Link to="/" className="back">&larr;</Link>
+          <img className="poster" src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt={movie.id} /></div> 
             <div className="content">
                 <h1 className="title">{movie.original_title}</h1>
                 <p className="desc">{movie.overview}</p>

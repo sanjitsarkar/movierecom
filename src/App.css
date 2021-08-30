@@ -194,7 +194,7 @@ body {
 }
 
 .movie_info {
-  height: 100vh;
+  min-height: 100vh;
   padding: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,6 +260,7 @@ body {
 }
 
 .movie_info .content {
+  min-height: auto;
   z-index: 0;
 }
 

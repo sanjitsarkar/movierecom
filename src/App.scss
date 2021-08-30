@@ -28,17 +28,88 @@ body{
   // justify-content: center;
   align-items: center;
 }
+@mixin movie_card {
+  border-radius: .3rem;
+  background: white;
+        text-decoration: none;
+        cursor: pointer;
+        // height:40vh;
+        // width:50vh;
+        overflow: hidden;
+        // height:100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.178);
+        img{
+  
+          width:100%;
+          // height: 70%;
+          // width: 18rem;
+          // width:19vw;
+          // flex:1 1 80%;
+          background-size: cover;
+          @media screen and (max-width:500px) {
+            width: 100%;
+          // height: 40vh;
+          background-size:contain;
+          
+  
+      
+          }
+        }
+        .content{
+    
+          // flex:1 1 30%;
+          //  height: 30%;
+          padding: 1.1rem;
+  .title{
+    margin:0;
+    text-align: left;
+    font-size: .9rem;
+    color:rgba(0, 0, 0, 0.883);
+  }
+  p{
+   
+   
+  }
+  .rating{
+    margin-top: .4rem;
+    font-weight: bold;
+    // height: 40%;
+    // width:40%;
+    // background: #000;
+    font-size: 1rem;
+    color:rgba(35, 83, 81, 0.746);
+  }
+
+        }
+}
+.loading{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
 .App{
+  header{
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.411);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    z-index: 99;
+   position: fixed;
+   top:0;
+   background: rgb(255, 255, 255);
   h1{
+  
     text-align: center;
-    margin-top: 2rem;
     text-transform: uppercase;
     color:rgba(19, 19, 29, 0.918);
+    margin-bottom: .5rem;
   }
   .genre_list{
-    margin:0 10%;
-    margin-top: 1rem;
+
 display: flex;
+margin: 0 4%;
 justify-content: center;
 gap:.5rem;
 @media screen and (max-width:400px) {
@@ -58,7 +129,7 @@ gap:.5rem;
     button{
       cursor: pointer;
       flex: 1 0 10%;
-      // border-radius: 3px;
+      border-radius: 5px;
       outline: none;
       border: none;
       padding:.7rem ;
@@ -93,16 +164,23 @@ gap:.5rem;
     }
 
   }
+}
   .movie_list
   {
-  
+   
+    h1{
+     
+      text-align: center;
+    }
+  top:8rem;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
     // align-content:center;
     // justify-content: center;
     margin: 2rem;
-    gap: 2rem;
-    justify-content: center;
     @media screen and (max-width:400px) {
     // align-items:center;
     margin: 0;
@@ -121,69 +199,20 @@ gap:.5rem;
     }
     .movie_card
     {
-    border-radius: .3rem;
-
-      text-decoration: none;
-      cursor: pointer;
-      // height:40vh;
-      width:50vh;
-      overflow: hidden;
-      height:100%;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.178);
-      img{
-
-        width:100%;
-        // height: 70%;
-        // width: 18rem;
-        // width:19vw;
-        // flex:1 1 80%;
-        background-size: cover;
-        @media screen and (max-width:500px) {
-          width: 100%;
-        // height: 40vh;
-        background-size:contain;
-        
-
-    
-        }
-      }
-      .content{
-  
-        // flex:1 1 30%;
-        //  height: 30%;
-        padding: 1.1rem;
-.title{
-  margin:0;
-  text-align: left;
-  font-size: .9rem;
-  color:rgba(0, 0, 0, 0.883);
-}
-p{
- 
- 
-}
-.rating{
-  margin-top: .4rem;
-  font-weight: bold;
-  // height: 40%;
-  // width:40%;
-  // background: #000;
-  font-size: 1rem;
-  color:rgba(35, 83, 81, 0.746);
-}
-.vote_count{
-
-}
-      }
+   @include movie_card()
     }
   }
 
 }
 .movie_info{
+  h1{
+    color: white;
+   
+
+  }
   min-height: 100vh;
-  padding: 5%;
+  // padding: 5%;
+  flex-direction: column;
 //  width: 100%;
   display: flex;
   gap:10%;
@@ -191,6 +220,94 @@ p{
   position: relative;
   // z-index: -1;
   background: rgb(12, 10, 15);
+  .movie_info_sect
+  {
+    padding: 5%;
+    margin-top: 10%;
+    display: flex;
+    gap:10%;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .rec_movies{
+    
+    h1{
+      // text-align: center;
+      margin-left:5% ;
+      margin-bottom: 3rem;
+    }
+    margin: 4rem 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    z-index: 1;
+    .movie_list
+    {
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+        display: none; }
+      padding: 0 5%;
+      overflow: hidden;
+
+    overflow-x: scroll;
+
+      display: flex;
+      gap: 2rem;
+    height: max-content;
+    &>*{
+      flex:0 0 12rem;
+    }
+// flex-wrap: wrap;
+      .movie_card{
+overflow: hidden;
+        border-radius: .3rem;
+        background: white;
+              text-decoration: none;
+              cursor: pointer;
+              // height:40vh;
+              // width:50vh;
+              // height:100%;
+              display: flex;
+              flex-direction: column;
+              box-shadow: 0 0 1rem rgba(0, 0, 0, 0.178);
+             
+              img{
+        
+                width:100%;
+                
+                background-size: cover;
+               
+              }
+        .content{
+          padding: 1.1rem;
+  .title{
+    text-align: left;
+    font-size: .9rem;
+    color:rgba(0, 0, 0, 0.883);
+  }
+  
+  .rating{
+    margin-top: .4rem;
+    font-weight: bold;
+    // height: 40%;
+    // width:40%;
+    // background: #000;
+    font-size: 1rem;
+    color:rgba(35, 83, 81, 0.746);
+  }
+
+
+        }
+      }
+      &>*{
+
+      }
+    }
+  }
+  
   .group{
     display: flex;
     
@@ -199,9 +316,11 @@ justify-content: center;
   }
 }
  a.back{
+   z-index: 99;
    display: grid;
    position: fixed;
    top:3.5%;
+   left:1%;
   //  font-size: 1rem;
    place-items: center;
    color:rgba(27, 26, 26, 0.678);
@@ -274,10 +393,13 @@ min-height: auto;
   }
   
   @media screen and (max-width:600px)  {
-  gap:5vh;
-  
-  // min-height: 100vh;
+    
+    // min-height: 100vh;
+    .movie_info_sect
+    {
+    gap:5vh;
   flex-direction: column;
+  }
   img.poster{
     height: 60vw;
     margin-top: 10vh;

@@ -304,6 +304,9 @@ body {
   background: white;
   text-decoration: none;
   cursor: pointer;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

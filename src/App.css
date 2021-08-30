@@ -224,7 +224,7 @@ body {
 .movie_info a.back {
   display: -ms-grid;
   display: grid;
-  position: absolute;
+  position: fixed;
   top: 3.5%;
   place-items: center;
   color: rgba(27, 26, 26, 0.678);

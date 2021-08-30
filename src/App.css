@@ -42,13 +42,6 @@ body {
           align-items: center;
 }
 
-.loading {
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-}
-
 .App header {
   -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.411);
           box-shadow: 0 0 1rem rgba(0, 0, 0, 0.411);
@@ -146,6 +139,7 @@ body {
 
 .App .movie_list h1 {
   text-align: center;
+  margin-top: 20%;
 }
 
 @media screen and (max-width: 400px) {
@@ -236,6 +230,13 @@ body {
 
 .movie_info h1 {
   color: white;
+}
+
+.movie_info h1.loading {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .movie_info .movie_info_sect {

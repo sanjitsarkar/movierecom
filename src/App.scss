@@ -84,11 +84,7 @@ body{
 
         }
 }
-.loading{
-  height: 100vh;
-  display: grid;
-  place-items: center;
-}
+
 .App{
   header{
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.411);
@@ -171,6 +167,7 @@ gap:.5rem;
     h1{
      
       text-align: center;
+      margin-top: 20%;
     }
   top:8rem;
     position: relative;
@@ -208,7 +205,11 @@ gap:.5rem;
   h1{
     color: white;
    
-
+    &.loading{
+      height: 100vh;
+      display: grid;
+      place-items: center;
+    }
   }
   min-height: 100vh;
   // padding: 5%;

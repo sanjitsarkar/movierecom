@@ -36,6 +36,9 @@ setMovies(await result.results)
 }
 useEffect(() => {
   fetchMovies()
+}, [])
+useEffect(() => {
+  fetchMovies()
 }, [location])
 // console.log(movies)
   return (

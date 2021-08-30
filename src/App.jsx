@@ -4,12 +4,12 @@ import GenreList from './components/GenreList'
 import { MovieList } from './components/MovieList'
 import {BrowserRouter,Switch,Route,useLocation } from 'react-router-dom'
 import MovieInfo from './components/MovieInfo'
+import apiKey from './apiKey'
 function App() {
   const [genre, setGenre] = useState("878")
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
   const location = useLocation()
-  const apiKey = import.meta.env.VITE_API_KEY
   const fetchMovies = async(_genre) => {
     if(location.pathname==="/")
     {

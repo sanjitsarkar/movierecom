@@ -2,13 +2,13 @@ import { useEffect,useState } from "react"
 import React from 'react'
 import { Link, useParams } from "react-router-dom"
 import { MovieList } from "./MovieList"
+import apiKey from "../apiKey"
 const MovieInfo = ({movies}) => {
     const {id} = useParams()
     const [movie, setMovie] = useState({})
     const [rmovies, setRMovies] = useState([])
     const [loading1, setLoading1] = useState(false)
     const [loading2, setLoading2] = useState(false)
-  const apiKey = import.meta.env.VITE_API_KEY
     const fetchRecommendedMovies = async() => {
         setLoading2(true)
         let response = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${apiKey}&language=en-US&page=1`)

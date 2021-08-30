@@ -275,7 +275,7 @@ justify-content: center;
   @media screen and (max-width:600px)  {
   gap:5vh;
   
-  height: 100vh;
+  // min-height: 100vh;
   flex-direction: column;
   img.poster{
     height: 60vw;

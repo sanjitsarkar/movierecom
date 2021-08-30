@@ -30,12 +30,25 @@ const MovieInfo = ({movies}) => {
             
         // setMovie(movies.find((_movie)=>_movie.id==id))
         // }
-        
+        console.log("cleed1")
             fetchMovieInfo()
             
         
         fetchRecommendedMovies()
     }, [id])
+    // useEffect(() => {
+    //     console.log("cleed2")
+
+    //     // if(movies.length){
+            
+    //     // setMovie(movies.find((_movie)=>_movie.id==id))
+    //     // }
+        
+    //         fetchMovieInfo()
+            
+        
+    //     fetchRecommendedMovies()
+    // }, [id])
     return (
         <div className="movie_info">
             {!loading1?(

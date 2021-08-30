@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import React from 'react'
-import { Link, useParams } from "react-router-dom"
+import { Link, Redirect, useParams } from "react-router-dom"
 import { MovieList } from "./MovieList"
 import apiKey from "../apiKey"
 const MovieInfo = ({movies}) => {
